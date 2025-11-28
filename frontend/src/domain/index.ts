@@ -1,2 +1,1 @@
-// Domain modules export
-export {};
+export * as stock from './stock/_module';

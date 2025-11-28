@@ -7,3 +7,4 @@
  */
 
 export * from './initExample';
+export * from './stockMovement';

@@ -4,10 +4,13 @@ import { LoadingSpinner } from '@/core/components/loading-spinner';
 import { MainLayout } from '@/layouts/MainLayout';
 
 const HomePage = lazy(() =>
-  import('@/pages/Home').then((module) => ({ default: module.HomePage })),
+  import('@/pages/Home').then((module) => ({ default: module.HomePage }))
+);
+const StockPage = lazy(() =>
+  import('@/pages/Stock').then((module) => ({ default: module.StockPage }))
 );
 const NotFoundPage = lazy(() =>
-  import('@/pages/NotFound').then((module) => ({ default: module.NotFoundPage })),
+  import('@/pages/NotFound').then((module) => ({ default: module.NotFoundPage }))
 );
 
 const routes = createBrowserRouter([
@@ -16,7 +19,7 @@ const routes = createBrowserRouter([
     element: (
       <Suspense
         fallback={
-          <div className='flex h-screen w-screen items-center justify-center'>
+          <div className="flex h-screen w-screen items-center justify-center">
             <LoadingSpinner />
           </div>
         }
@@ -30,11 +33,15 @@ const routes = createBrowserRouter([
         element: <HomePage />,
       },
       {
+        path: 'stock',
+        element: <StockPage />,
+      },
+      {
         path: '*',
         element: (
           <Suspense
             fallback={
-              <div className='flex h-full w-full items-center justify-center'>
+              <div className="flex h-full w-full items-center justify-center">
                 <LoadingSpinner />
               </div>
             }

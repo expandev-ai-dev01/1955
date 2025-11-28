@@ -10,3 +10,8 @@
  * InitExample instances
  */
 export { initExampleStore, type InitExampleRecord } from './initExample';
+
+/**
+ * StockMovement instances
+ */
+export { stockMovementStore } from './stockMovement';
